@@ -1,89 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#EF2323"
+            app:layoutDescription="@xml/activity_main_xml_constraintlayout_scene">
+
+            <NumberPicker
+                android:id="@+id/numberPicker_min"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:keepScreenOn="false"
+                android:solidColor="#F69B94"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_settime_50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <NumberPicker
+                android:id="@+id/numberPicker_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:solidColor="#F69B94"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_settime_50"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="분"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/numberPicker_min"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="초"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/numberPicker_sec"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_settime_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Timer"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editTextSetsToExercise"
-        android:layout_width="335dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="운동 이름을 적으세요"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
 
-    <Button
-        android:id="@+id/SetCount"
-        android:layout_width="260dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#03A9F4"
-        android:text="해당 운동 세트 수를 정하세요"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="448dp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Timer"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.071" />
 
-    <Button
-        android:id="@+id/SetTime"
-        android:layout_width="223dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#03A9F4"
-        android:text="해당 운동 시간을 정하세요."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="521dp" />
+        <EditText
+            android:id="@+id/editTextSetsToExercise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="운동 이름을 적으세요"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#6F8FEF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteY="632dp" />
+        <Button
+            android:id="@+id/SetCount"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="22dp"
+            android:backgroundTint="#03A9F4"
+            android:text="해당 운동 세트 수를 정하세요"
+            app:layout_constraintBottom_toTopOf="@+id/SetTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberPicker" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="168dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#03A9F4"
-        android:text="설정이 끝났습니다."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="748dp" />
+        <Button
+            android:id="@+id/SetTime"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="60dp"
+            android:backgroundTint="#03A9F4"
+            android:text="해당 운동 시간을 정하세요."
+            app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SetCount" />
 
-    <NumberPicker
-        android:id="@+id/numberPicker"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        ></NumberPicker>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="center"
+            app:backgroundTint="#6F8FEF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.663"
+            app:srcCompat="@android:drawable/ic_menu_add"
+            app:useCompatPadding="false"
+            tools:ignore="SpeakableTextPresentCheck" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="45dp"
+            android:backgroundTint="#03A9F4"
+            android:text="설정이 끝났습니다."
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
