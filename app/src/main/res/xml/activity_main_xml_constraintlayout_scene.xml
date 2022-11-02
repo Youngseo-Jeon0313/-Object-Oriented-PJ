@@ -15,17 +15,13 @@
         <Constraint
             android:id="@+id/numberPicker_sec"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/guideline_settime_50"
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="15dp"
             android:layout_marginStart="15dp"
             motion:layout_constraintTop_toTopOf="parent" />
-        <Constraint android:id="@+id/linearLayout2"
-            motion:layout_constraintTop_toTopOf="parent"
-            android:layout_width="3dp"
-            android:layout_height="0dp" />
+
         <Constraint
             motion:layout_editor_absoluteY="554dp"
             motion:layout_editor_absoluteX="305dp"
