@@ -20,32 +20,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.439" />
 
-    <EditText
-        android:id="@+id/editTextSetsToExercise"
-        android:layout_width="219dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edge"
-        android:hint="@string/name"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/SetBox"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="@+id/SetBox"
-        app:layout_constraintTop_toTopOf="@+id/SetBox"
-        android:autofillHints="" />
-
     <Button
         android:id="@+id/SetCount"
-        android:layout_width="198dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="251dp"
-        android:background="@drawable/edge"
-        android:text="해당 운동 세트 수를 정하세요"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/SetTime"
-        app:layout_constraintTop_toBottomOf="@+id/SetTime" />
+        android:layout_width="242dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/white"
+        android:text="쉬는시간 선택"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SetBox"
+        app:layout_constraintEnd_toEndOf="@+id/SetBox"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="@+id/SetBox"
+        app:layout_constraintTop_toBottomOf="@+id/SetTime"
+        app:strokeColor="@color/black"
+        app:strokeWidth="4dp" />
 
     <TextView
         android:id="@+id/SetBox"
@@ -53,7 +42,6 @@
         android:layout_height="234dp"
         android:layout_marginBottom="335dp"
         android:background="@drawable/edge"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.529"
@@ -63,15 +51,19 @@
 
     <Button
         android:id="@+id/SetTime"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="27dp"
-        android:background="@drawable/edge"
-        android:text="해당 운동 시간을 정하세요."
+        android:layout_width="242dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/white"
+        android:text="운동시간 선택"
+        android:textColor="@color/black"
+        app:cornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@+id/SetCount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SetBox" />
+        app:layout_constraintEnd_toEndOf="@+id/SetBox"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="@+id/SetBox"
+        app:layout_constraintTop_toBottomOf="@+id/exercisename"
+        app:strokeColor="#000000"
+        app:strokeWidth="4dp" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -106,5 +98,18 @@
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:srcCompat="@drawable/startbutton" />
+
+    <TextView
+        android:id="@+id/exercisename"
+        android:layout_width="240dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edge"
+        android:text="운동 이름을 적으세요"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/SetBox"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/SetBox"
+        app:layout_constraintTop_toTopOf="@+id/SetBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
