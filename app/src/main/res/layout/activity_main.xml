@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/whiteBoard"
         android:layout_width="320dp"
         android:layout_height="693dp"
         android:background="@color/white"
@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/SetCount"
         android:layout_width="242dp"
-        android:layout_height="52dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/white"
         android:text="쉬는시간 선택"
         android:textColor="@color/black"
@@ -42,17 +42,17 @@
         android:layout_height="234dp"
         android:layout_marginBottom="335dp"
         android:background="@drawable/edge"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="@+id/whiteBoard"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoard"
         app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/whiteBoard"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoard"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/SetTime"
         android:layout_width="242dp"
-        android:layout_height="52dp"
+        android:layout_height="60dp"
         android:backgroundTint="@color/white"
         android:text="운동시간 선택"
         android:textColor="@color/black"
@@ -61,52 +61,58 @@
         app:layout_constraintEnd_toEndOf="@+id/SetBox"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="@+id/SetBox"
-        app:layout_constraintTop_toBottomOf="@+id/exercisename"
+        app:layout_constraintTop_toBottomOf="@+id/setName"
         app:strokeColor="#000000"
         app:strokeWidth="4dp" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/addButton"
         android:layout_width="67dp"
         android:layout_height="25dp"
         android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoard"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/exercisingPerson"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoard"
         app:srcCompat="@drawable/addbutton" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/exercisingPerson"
         android:layout_width="96dp"
         android:layout_height="92dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="24dp"
         android:contentDescription="TODO"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoard"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoard"
         app:srcCompat="@drawable/exercise" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/startButton"
         android:layout_width="89dp"
         android:layout_height="34dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/whiteBoard"
+        app:layout_constraintTop_toTopOf="@+id/whiteBoard"
         app:srcCompat="@drawable/startbutton" />
 
-    <TextView
-        android:id="@+id/exercisename"
+
+    <EditText
+        android:id="@+id/setName"
         android:layout_width="240dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/edge"
-        android:text="운동 이름을 적으세요"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="운동 이름을 적으세요"
+        android:inputType="textPersonName"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/SetBox"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="@+id/SetBox"

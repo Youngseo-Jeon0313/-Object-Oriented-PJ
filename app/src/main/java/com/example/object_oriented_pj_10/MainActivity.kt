@@ -1,5 +1,6 @@
 package com.example.object_oriented_pj_10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,18 +8,30 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.NumberPicker
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.setmodal.view.*
-import kotlinx.android.synthetic.main.timemodal.view.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var selectNum = 0
+        var list = Array<Int>(3,{0});
+        var map = mutableMapOf<String,ArrayList<Int>>();
 
+        //전환할 화면은 ExerciseTimer이다.
+        val startIntent = Intent(this, ExerciseTimer::class.java)
+
+        //같이 가져갈 데이터는 리스트 형태이다.
+        //startIntent.putExtra("map", map);
+
+        //startButton을 누르면 ExerciseTimer로 넘어감
+        startButton.setOnClickListener {
+            startActivity(startIntent);
+        }
+
+        //세트 수 정하는 버튼 클릭 이벤트
         SetCount.setOnClickListener  {
             val layout = layoutInflater.inflate(R.layout.setmodal, null)
             val build = AlertDialog.Builder(it.context).apply {
@@ -35,9 +48,9 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
 
-            layout.btn_cancel.setOnClickListener {
+            layout.btn_ok.setOnClickListener {
                 selectNum = layout.number_picker.value
-                //btn_number_select.text = "$selectNum 번"
+                list[0]=selectNum;
                 dialog.dismiss()
             }
         }
@@ -76,8 +89,9 @@ class MainActivity : AppCompatActivity() {
 
 
             start.setOnClickListener {
-                //Toast.makeText(context, "${minute.value}분 ${second.value}초", Toast.LENGTH_SHORT).show()
-                //(activity as PageActivity).startExcercise(exname)
+                list[1]=minute.value;
+                list[2]=second.value;
+
                 dialog.dismiss()
             }
 
@@ -88,6 +102,13 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
             dialog.window!!.setLayout(750, WindowManager.LayoutParams.WRAP_CONTENT)
 
+        }
+
+
+        addButton.setOnClickListener {
+
+
+            //startIntent.putExtra("map", map데이터);
         }
         }
     }
