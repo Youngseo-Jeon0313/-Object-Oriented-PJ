@@ -9,22 +9,36 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.NumberPicker
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.object_oriented_pj_10.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.setmodal.view.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding : ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         var selectNum = 0
-        var list = Array<Int>(3,{0});
+        var exerciseTime = 0
+        val list = arrayListOf<ExerciseList>()
         var map = mutableMapOf<String,ArrayList<Int>>();
+
+        binding.recExercise.layoutManager = LinearLayoutManager(this)
+        binding.recExercise.adapter = ExerciseAdapter(list)
+
 
         //전환할 화면은 ExerciseTimer이다.
         val startIntent = Intent(this, ExerciseTimer::class.java)
 
         //같이 가져갈 데이터는 리스트 형태이다.
         //startIntent.putExtra("map", map);
+
+
+
 
         //startButton을 누르면 ExerciseTimer로 넘어감
         startButton.setOnClickListener {
@@ -41,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
 
             layout.number_picker.minValue = 1
-            layout.number_picker.maxValue = 10
+            layout.number_picker.maxValue = 60
             if(selectNum != 0) layout.number_picker.value = selectNum
 
             layout.btn_cancel.setOnClickListener {
@@ -50,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 
             layout.btn_ok.setOnClickListener {
                 selectNum = layout.number_picker.value
-                list[0]=selectNum;
                 dialog.dismiss()
             }
         }
@@ -89,8 +102,7 @@ class MainActivity : AppCompatActivity() {
 
 
             start.setOnClickListener {
-                list[1]=minute.value;
-                list[2]=second.value;
+                exerciseTime = minute.value * 60 +second.value
 
                 dialog.dismiss()
             }
@@ -100,15 +112,30 @@ class MainActivity : AppCompatActivity() {
 
             dialog.create()
             dialog.show()
-            dialog.window!!.setLayout(750, WindowManager.LayoutParams.WRAP_CONTENT)
 
         }
+        fun addTask(){
+            val exercise = ExerciseList(binding.setName.text.toString(), selectNum, exerciseTime)
 
+            list.add(exercise)
+            
+            binding.recExercise.adapter?.notifyDataSetChanged()
+        }
 
         addButton.setOnClickListener {
 
-
+            addTask()
             //startIntent.putExtra("map", map데이터);
         }
+
+        //intent시 back 버튼으로 전으로 돌아오기
+
+
+
+
+
+
+
         }
+
     }

@@ -14,9 +14,5 @@ class ExerciseTimer : AppCompatActivity() {
                 val exercisetime = intent.getByteExtra("exercise",0)
                 val resttime = intent.getByteExtra("rest",0)
         }
-
     }
-
-
-
 }
