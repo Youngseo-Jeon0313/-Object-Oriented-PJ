@@ -3,7 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
 }
-
+androidExtensions {
+    experimental = true
+}
 android {
     namespace 'com.example.object_oriented_pj_10'
     compileSdk 32

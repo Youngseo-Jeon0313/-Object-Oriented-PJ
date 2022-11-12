@@ -24,24 +24,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         var selectNum = 0
         var exerciseTime = 0
+        var intentlist = arrayListOf<ExerciseList>()
         val list = arrayListOf<ExerciseList>()
-        var map = mutableMapOf<String,ArrayList<Int>>();
+        var map = mutableMapOf<String,List<Int>>();
 
         binding.recExercise.layoutManager = LinearLayoutManager(this)
         binding.recExercise.adapter = ExerciseAdapter(list)
 
 
         //전환할 화면은 ExerciseTimer이다.
-        val startIntent = Intent(this, ExerciseTimer::class.java)
+
 
         //같이 가져갈 데이터는 리스트 형태이다.
-        //startIntent.putExtra("map", map);
+        //
+        var startIntent = Intent(this@MainActivity, ExerciseTimer::class.java)
 
 
 
 
         //startButton을 누르면 ExerciseTimer로 넘어감
         startButton.setOnClickListener {
+            startIntent.putParcelableArrayListExtra("exercise", intentlist)
+
             startActivity(startIntent);
         }
 
@@ -115,10 +119,12 @@ class MainActivity : AppCompatActivity() {
 
         }
         fun addTask(){
-            val exercise = ExerciseList(binding.setName.text.toString(), selectNum, exerciseTime)
+            var exercise = ExerciseList(binding.setName.text.toString(), selectNum, exerciseTime)
 
             list.add(exercise)
-            
+            startIntent.putExtra("type",1)
+            intentlist.add(exercise)
+
             binding.recExercise.adapter?.notifyDataSetChanged()
         }
 
@@ -129,12 +135,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         //intent시 back 버튼으로 전으로 돌아오기
-
-
-
-
-
-
 
         }
 
