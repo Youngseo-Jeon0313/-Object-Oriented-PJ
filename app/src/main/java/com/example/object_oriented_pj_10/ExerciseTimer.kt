@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_exercise_timer.*
-import java.util.Timer
-import java.util.jar.Attributes.Name
 
 
 class ExerciseTimer : AppCompatActivity() {

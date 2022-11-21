@@ -1,34 +1,47 @@
+
+
 package com.example.object_oriented_pj_10
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.NumberPicker
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.object_oriented_pj_10.databinding.ExerciseMainBinding
-import kotlinx.android.synthetic.main.exercise_main.*
-import kotlinx.android.synthetic.main.setmodal.view.*
 
-class ExerciseActivity : AppCompatActivity() {
-    lateinit var binding : ExerciseMainBinding
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
+/**
+ * A simple [Fragment] subclass.
+ * Use the [ExerciseFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class ExerciseFragment : Fragment() {
+    // TODO: Rename and change types of parameters
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_exercise, container, false)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ExerciseMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        binding = ExerciseMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
         var selectNum = 0
         var exerciseTime = 0
         var intentlist = arrayListOf<ExerciseList>()
         val list = arrayListOf<ExerciseList>()
         var map = mutableMapOf<String,List<Int>>();
 
-        binding.recExercise.layoutManager = LinearLayoutManager(this)
-        binding.recExercise.adapter = ExerciseAdapter(list)
+//        binding.recExercise.layoutManager = LinearLayoutManager(this)
+//        binding.recExercise.adapter = ExerciseAdapter(list)
 
 
         //전환할 화면은 ExerciseTimer이다.
@@ -36,16 +49,16 @@ class ExerciseActivity : AppCompatActivity() {
 
         //같이 가져갈 데이터는 리스트 형태이다.
         //
-        var startIntent = Intent(this@ExerciseActivity, ExerciseTimer::class.java)
+//        var startIntent = Intent(this@ExerciseActivity, ExerciseTimer::class.java)
 
 
 
 
         //startButton을 누르면 ExerciseTimer로 넘어감
         startButton.setOnClickListener {
-            startIntent.putParcelableArrayListExtra("exercise", intentlist)
-
-            startActivity(startIntent);
+//            startIntent.putParcelableArrayListExtra("exercise", intentlist)
+//
+//            startActivity(startIntent);
         }
 
         //세트 수 정하는 버튼 클릭 이벤트
@@ -117,24 +130,24 @@ class ExerciseActivity : AppCompatActivity() {
             dialog.show()
 
         }
-        fun addTask(){
-            var exercise = ExerciseList(binding.setName.text.toString(), selectNum, exerciseTime)
-
-            list.add(exercise)
-            startIntent.putExtra("type",1)
-            intentlist.add(exercise)
-
-            binding.recExercise.adapter?.notifyDataSetChanged()
-        }
+//        fun addTask(){
+//            var exercise = ExerciseList(binding.setName.text.toString(), selectNum, exerciseTime)
+//
+//            list.add(exercise)
+//            startIntent.putExtra("type",1)
+//            intentlist.add(exercise)
+//
+//            binding.recExercise.adapter?.notifyDataSetChanged()
+//        }
 
         addButton.setOnClickListener {
 
-            addTask()
+//            addTask()
             //startIntent.putExtra("map", map데이터);
         }
 
         //intent시 back 버튼으로 전으로 돌아오기
 
-        }
-
     }
+}
+
