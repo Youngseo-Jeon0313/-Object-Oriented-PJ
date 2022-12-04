@@ -18,11 +18,6 @@ class StudyCountUpFragment : Fragment() {
     var pauseTime = 0L
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

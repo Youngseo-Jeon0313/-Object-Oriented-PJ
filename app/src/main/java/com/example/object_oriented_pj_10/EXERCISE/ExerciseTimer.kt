@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.EXERCISE
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.object_oriented_pj_10.databinding.FragmentExerciseTimerBinding
-import com.example.object_oriented_pj_10.repository.MyExerciseRepository
 import java.util.ArrayList
 
 

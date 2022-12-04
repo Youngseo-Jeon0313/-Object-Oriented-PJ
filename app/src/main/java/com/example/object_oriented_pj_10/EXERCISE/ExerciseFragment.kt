@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.EXERCISE
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.object_oriented_pj_10.R
 import com.example.object_oriented_pj_10.databinding.FragmentExerciseBinding
 import kotlinx.android.synthetic.main.fragment_exercise.*
 import kotlinx.android.synthetic.main.list_exercise.*

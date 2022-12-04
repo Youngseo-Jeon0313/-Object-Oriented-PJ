@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.MEMO
 
 data class firebaseList (
     val name: String? ,

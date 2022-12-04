@@ -1,15 +1,11 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.MEMO
 
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.object_oriented_pj_10.repository.MyMemoRepository
 import kotlinx.coroutines.launch
-import org.json.JSONArray
-
 
 
 class MemoView : ViewModel() {

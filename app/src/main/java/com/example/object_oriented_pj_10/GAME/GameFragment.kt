@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.GAME
 
 import android.content.Context
 import android.media.SoundPool
@@ -9,20 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import android.widget.TextView
+import com.example.object_oriented_pj_10.MainActivity
+import com.example.object_oriented_pj_10.R
 import com.example.object_oriented_pj_10.databinding.FragmentGameBinding
-import kotlinx.android.synthetic.*
-import kotlin.random.Random
-
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class GameFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
     var binding:FragmentGameBinding?=null
     private var currentCountDownTimer: CountDownTimer? = null
     private var tickingSoundId: Int? = null
@@ -41,11 +34,6 @@ class GameFragment : Fragment() {
     private val range=(1..60)
     private val soundPool = SoundPool.Builder().build()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
