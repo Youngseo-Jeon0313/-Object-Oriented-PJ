@@ -1,11 +1,15 @@
 package com.example.object_oriented_pj_10.STUDY
 
+import android.content.Context
+import android.media.SoundPool
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.object_oriented_pj_10.MainActivity
+import com.example.object_oriented_pj_10.R
 import com.example.object_oriented_pj_10.databinding.FragmentStudyCountdownBinding
 
 
@@ -14,16 +18,19 @@ class StudyCountDownFragment : Fragment() {
     var binding: FragmentStudyCountdownBinding?=null
 
     lateinit var countDownTimer: CountDownTimer
+    lateinit var mainActivity: MainActivity
     
     var timeRunning = false // timer 실행 여부
     var startState=false // start 버튼 작동 여부
     var time =0L // 초기 값
     var tempTime= 0L // 실행 시간
 
+    val soundPool = SoundPool.Builder().build()
+    private var endSoundId: Int? =null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
     override fun onCreateView(
@@ -38,6 +45,7 @@ class StudyCountDownFragment : Fragment() {
     // Study CountDown Timer 에서 보여지는 버튼 3가지에 따른 실행 함수 호출.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initSounds()
         binding?.btnStart?.setOnClickListener{
             viewMode("start")
             startStop()
@@ -92,7 +100,11 @@ class StudyCountDownFragment : Fragment() {
                 updateTime()
             }
 
-            override fun onFinish() {}
+            override fun onFinish() {
+                endSoundId?.let { soundId ->
+                soundPool.play(soundId, 1F, 1F, 0, 1, 1F)
+                }
+            }
         }.start()
         binding?.stopBtn?.text="일시정지"
         timeRunning=true
@@ -119,5 +131,9 @@ class StudyCountDownFragment : Fragment() {
         if(sec<10)timerLeftText+="0"
         timerLeftText+="$sec"
         binding?.timerText?.text=timerLeftText
+    }
+
+    private fun initSounds() {
+        endSoundId = soundPool.load(mainActivity, R.raw.timer_bell, 1)
     }
 }
