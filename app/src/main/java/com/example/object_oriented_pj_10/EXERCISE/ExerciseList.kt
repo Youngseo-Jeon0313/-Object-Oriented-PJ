@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.EXERCISE
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

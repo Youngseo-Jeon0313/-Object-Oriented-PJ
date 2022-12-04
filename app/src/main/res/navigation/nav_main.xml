@@ -16,17 +16,17 @@
     </fragment>
     <fragment
         android:id="@+id/cookFragment"
-        android:name="com.example.object_oriented_pj_10.CookFragment"
+        android:name="com.example.object_oriented_pj_10.COOK.CookFragment"
         android:label="Cook"
         tools:layout="@layout/fragment_cook" />
     <fragment
         android:id="@+id/memoFragment"
-        android:name="com.example.object_oriented_pj_10.MemoFragment"
+        android:name="com.example.object_oriented_pj_10.MEMO.MemoFragment"
         android:label="Memo"
         tools:layout="@layout/fragment_memo" />
     <fragment
         android:id="@+id/exerciseFragment"
-        android:name="com.example.object_oriented_pj_10.ExerciseFragment"
+        android:name="com.example.object_oriented_pj_10.EXERCISE.ExerciseFragment"
         android:label="Exercise"
         tools:layout="@layout/fragment_exercise" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/exerciseTimer"
-        android:name="com.example.object_oriented_pj_10.ExerciseTimer"
+        android:name="com.example.object_oriented_pj_10.EXERCISE.ExerciseTimer"
         android:label="fragment_exercise_timer"
         tools:layout="@layout/fragment_exercise_timer" >
         <action
