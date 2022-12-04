@@ -21,11 +21,6 @@ class StudyCountDownFragment : Fragment() {
     var tempTime= 0L // 실행 시간
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
