@@ -1,8 +1,6 @@
-package com.example.object_oriented_pj_10.repository
+package com.example.object_oriented_pj_10.MEMO
 
 import android.util.Log
-import com.example.object_oriented_pj_10.MemoList
-import kotlinx.coroutines.delay
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader

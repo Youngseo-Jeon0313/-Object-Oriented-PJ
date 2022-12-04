@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10;
+package com.example.object_oriented_pj_10.MEMO;
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

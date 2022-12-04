@@ -1,8 +1,7 @@
-package com.example.object_oriented_pj_10;
+package com.example.object_oriented_pj_10.EXERCISE;
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.object_oriented_pj_10.databinding.ListExerciseBinding
 

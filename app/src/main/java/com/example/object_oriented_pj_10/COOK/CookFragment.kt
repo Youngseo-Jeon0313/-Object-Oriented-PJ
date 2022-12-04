@@ -1,4 +1,4 @@
-package com.example.object_oriented_pj_10
+package com.example.object_oriented_pj_10.COOK
 
 import android.content.Context
 import android.media.SoundPool
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.object_oriented_pj_10.MainActivity
+import com.example.object_oriented_pj_10.R
 import com.example.object_oriented_pj_10.databinding.FragmentCookBinding
 
 
